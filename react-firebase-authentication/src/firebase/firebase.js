@@ -5,7 +5,7 @@ const prodConfig = {
     authDomain: "lets-talk-final.firebaseapp.com",
     databaseURL: "https://lets-talk-final.firebaseio.com",
     projectId: "lets-talk-final",
-    storageBucket: "",
+    storageBucket: "lets-talk-final.appspot.com",
     messagingSenderId: "419962268924"
 };
 
