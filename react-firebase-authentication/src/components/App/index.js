@@ -31,7 +31,7 @@ const App = () =>
       <Route exact path={routes.SIGN_IN} component={() => <SignInPage />} />
       <Route exact path={routes.PASSWORD_FORGET} component={() => <PasswordForgetPage />} />
       <Route exact path={routes.HOME} component={() => <HomePage />} />
-      { /*<Route exact path={routes.WriteEntry} component={() => <WriteEntry /> } /> */}
+      <Route exact path={routes.WriteEntry} component={() => <WriteEntry /> } />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
 
 
