@@ -1,5 +1,5 @@
 import React from 'react';
-import { form } from 'semantic-ui-react';
+import { form, Button } from 'semantic-ui-react';
 
 const Questionnaire = () =>
 <div>
@@ -39,6 +39,7 @@ const Questionnaire = () =>
   </select>
   </div>
 </div>
+<Button primary>Submit</Button>
 
 
 </form>
