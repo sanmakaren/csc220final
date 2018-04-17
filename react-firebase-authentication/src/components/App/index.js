@@ -4,6 +4,9 @@ import {
   Route,
 } from 'react-router-dom';
 
+import 'semantic-ui-css/semantic.min.css';
+
+
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -14,6 +17,8 @@ import AccountPage from '../Account';
 import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
 import WriteEntry from '../WriteEntry';
+import Questionnaire from '../Questionnaire';
+//import Page from '../Page';
 
 import './index.css';
 
@@ -32,6 +37,7 @@ const App = () =>
       <Route exact path={routes.PASSWORD_FORGET} component={() => <PasswordForgetPage />} />
       <Route exact path={routes.HOME} component={() => <HomePage />} />
       <Route exact path={routes.WriteEntry} component={() => <WriteEntry /> } />
+      <Route exact path={routes.Questionnaire} component={() => <Questionnaire /> } />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
 
 

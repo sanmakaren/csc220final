@@ -11,6 +11,8 @@ class HomePage extends Component {
         <button><Link to={routes.WriteEntry}>Click</Link>
         </button>
 
+        <button> <Link to= {routes.Questionnaire}>Form</Link> </button>
+
       </div>
     );
   }
