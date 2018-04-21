@@ -121,3 +121,12 @@ li a {
         }
     }
 }
+body {
+  background-color: white;
+}
+
+img {
+  position: fixed; /* or absolute */
+  top: 35%;
+  left: 30%;
+}

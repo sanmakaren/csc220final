@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Navigation from '../Navigation';
+
 import * as routes from '../../constants/routes';
 
 class HomePage extends Component {
@@ -8,10 +10,13 @@ class HomePage extends Component {
 
     return (
       <div>
+        <Navigation />
         <button><Link to={routes.WriteEntry}>Click</Link>
         </button>
 
         <button> <Link to= {routes.Questionnaire}>Form</Link> </button>
+
+        <button> <Link to= {routes.HomePageLayout}>Home</Link> </button>
 
       </div>
     );

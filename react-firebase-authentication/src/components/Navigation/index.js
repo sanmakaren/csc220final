@@ -16,20 +16,26 @@ const Navigation = () =>
 const name = "Let's Talk"
 const NavigationAuth = () =>
 <div id="navigation" className="Navigation">
-<nav>
+
+
+ <nav>
   <ul>
-    <li><Link to={routes.LANDING}> {name} </Link></li>
+    <li><Link to={routes.HomePageLayout}> {name} </Link></li>
     <li><Link to={routes.HOME}>Journal</Link></li>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>
     <li><SignOutButton /></li>
+    {/* Render One page and not another*/}
   </ul>
   </nav>
+
+
+
   </div>
 
 const NavigationNonAuth = () =>
   <ul>
-    <li><Link to={routes.LANDING}>{name}</Link></li>
-    <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+    <li><Link to={routes.HomePageLayout}>{name}</Link></li>
+    {/* Render One page and not another*/}
   </ul>
 
 export default Navigation;

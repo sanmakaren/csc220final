@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import Navigation from '../Navigation';
+
 
 
 class CountDownTimer extends React.Component {
@@ -102,6 +104,8 @@ class WriteEntry extends React.Component {
     return (
 
       <div>
+
+      <Navigation />
 
        <Welcome name = "sara" />
 

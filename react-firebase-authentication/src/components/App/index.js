@@ -18,19 +18,13 @@ import withAuthentication from '../Session/withAuthentication';
 import * as routes from '../../constants/routes';
 import WriteEntry from '../WriteEntry';
 import Questionnaire from '../Questionnaire';
-//import Page from '../Page';
+import HomePageLayout from '../HomePageLayout';
 
 import './index.css';
 
 const App = () =>
   <Router>
     <div className="app">
-    <div id="navigation" className="Navigation">
-    <nav>
-      <Navigation />
-    </nav>
-     </div>
-
       <Route exact path={routes.LANDING} component={() => <LandingPage />} />
       <Route exact path={routes.SIGN_UP} component={() => <SignUpPage />} />
       <Route exact path={routes.SIGN_IN} component={() => <SignInPage />} />
@@ -38,6 +32,7 @@ const App = () =>
       <Route exact path={routes.HOME} component={() => <HomePage />} />
       <Route exact path={routes.WriteEntry} component={() => <WriteEntry /> } />
       <Route exact path={routes.Questionnaire} component={() => <Questionnaire /> } />
+      <Route exact path={routes.HomePageLayout} component={() => <HomePageLayout />} />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
 
 
