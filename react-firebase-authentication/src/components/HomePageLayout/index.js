@@ -24,7 +24,7 @@ import * as routes from '../../constants/routes'
  */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <center> <img src={require('/Users/mariamajaiteh/Desktop/react-firebase-authentication/src/Logo.png')}/> </center>
+    <center> <img src={require('./Logo.png')}/> </center>
     <Header
       as='h2'
       content={""}

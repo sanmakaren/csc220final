@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import Navigation from '../Navigation';
-import data from  '/Users/mariamajaiteh/Desktop/react-firebase-authentication/src/prompts.json';
+import data from  '../../prompts.json';
 
 
 const number = Math.floor(Math.random() *data.length)

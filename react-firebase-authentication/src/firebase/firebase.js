@@ -29,7 +29,18 @@ if (!firebase.apps.length) {
 const db = firebase.database();
 const auth = firebase.auth();
 
+
+const form_resp = firebase.database().ref('form_resp');
+
+var data = {
+  name: "karennn",
+  score: 100
+}
+
+form_resp.push(data);
+
 export {
   db,
   auth,
+  form_resp,
 };

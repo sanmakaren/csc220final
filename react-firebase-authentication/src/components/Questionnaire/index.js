@@ -4,8 +4,10 @@ import { form, Button } from 'semantic-ui-react';
 import Navigation from '../Navigation';
 import * as routes from '../../constants/routes';
 import WriteEntry from '../WriteEntry';
-import { auth, db } from '../../firebase';
+import { auth, db, form_resp } from '../../firebase';
 
+
+form_resp.createResponse('mariama', 50);
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value,
@@ -17,6 +19,7 @@ const INITIAL_STATE = {
   writing_style: ''
 
 };
+
 
 
 class Questionnaire extends Component {
