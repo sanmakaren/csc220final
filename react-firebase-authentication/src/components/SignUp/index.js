@@ -38,6 +38,7 @@ class SignUpForm extends Component {
       email,
       passwordOne,
     } = this.state;
+    
 
     const {
       history,

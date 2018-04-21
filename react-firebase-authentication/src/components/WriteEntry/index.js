@@ -1,8 +1,10 @@
 import React from 'react';
 import './style.css';
 import Navigation from '../Navigation';
+import data from  '/Users/mariamajaiteh/Desktop/react-firebase-authentication/src/prompts.json';
 
 
+const number = Math.floor(Math.random() *data.length)
 
 class CountDownTimer extends React.Component {
   constructor() {
@@ -114,7 +116,7 @@ class WriteEntry extends React.Component {
 
       <form onSubmit={this.handleSubmit}>
 
-      <h1> hey this is a question </h1>
+      <h1> {data[number]["prompt"]}</h1>
       <center>
         <label>
           Essay:
