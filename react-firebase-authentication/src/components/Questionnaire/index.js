@@ -1,8 +1,14 @@
-import React from 'react';
+import React , {Component} from 'react';
+import { Link } from 'react-router-dom';
 import { form, Button } from 'semantic-ui-react';
+import Navigation from '../Navigation';
+import * as routes from '../../constants/routes';
+import WriteEntry from '../WriteEntry';
 
-const Questionnaire = () =>
+
+const Question = () =>
 <div>
+<Navigation />
   <div class="ui horizontal divider">Questionnaire</div>
   <form class="ui form segment">
   <div class="two fields">
@@ -33,18 +39,45 @@ const Questionnaire = () =>
 <div class="two fields">
   <div class="field">
   <label>Writing Style</label>
-  <select name="skills" multiple="" class="ui fluid dropdown">
-  <option value="Free Writing">Free Write</option>
+  <select name="Free_Writing" multiple="" class="ui fluid dropdown"  >
+  <option value="Free_Writing">Free Write</option>
   <option value="Question-based"> Question-Based</option>
   </select>
   </div>
 </div>
-<Button primary>Submit</Button>
-
+<Button> <Link to={routes.WriteEntry}> Submit </Link></Button>
 
 </form>
-
 </div>
+
+
+class Questionnaire extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      mood: "",
+      time: 0,
+      writing_style: ""
+    };
+  }
+  render() {
+
+    return(
+      <div>
+      <Question />
+
+      </div>
+    );
+  }
+
+
+
+
+}
+
+
 
 
 export default Questionnaire;
