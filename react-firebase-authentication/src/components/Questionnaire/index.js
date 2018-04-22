@@ -14,46 +14,63 @@ class Questionnaire extends Component {
 
   constructor () {
     super();
+
+
     this.state = {
-      email: '',
-      password: '',
-      gender: ''
+      mood:'',
+      time: 0,
+      writing_style: ''
+     };
 
-    };
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleMoodChange = this.handleTimeChange.bind(this);
+    this.handleTimeChange = this.handleTimeChange.bind(this);
+    this.handleWritingChange = this.handleWritingChange.bind(this)
   }
 
-  handleEmailChange (evt) {
-    this.setState({ email: evt.target.value });
-    console.log(evt.target.value)
+  handleMoodChange (evt) {
+  this.setState({ mood: evt.target.value });
+  console.log(evt.target.value);
+
   }
 
-  handlePasswordChange (evt) {
-    this.setState({ password: evt.target.value });
+
+  handleTimeChange (evt, data) {
+  this.setState({ time: evt.target.value });
+  console.log(evt.target.value);
   }
 
-  handleChange(e) {
-    this.setState({ gender: e.target.value });
-    console.log(e.target.value)
+  handleWritingChange (evt, data) {
+  this.setState({ writing_style: evt.target.value });
   }
+
 
   render () {
     return (
       <form>
-
-        <label>Email</label>
-        <input type="text" name="email" onChange={this.handleEmailChange} />
-
-        <label>Password</label>
-        <input type="password" name="password" onChange={this.handlePasswordChange} />
-
-        <label>carr :)</label>
-        <select value={this.state.gender} onChange={this.handleChange}>
-          <option name="male"> Male</option>
-          <option name="female">Female</option>
+        <label>mood</label>
+        <select value={this.state.mood} onChange={this.handleMoodChange}>
+          <option name="happy"> Happy</option>
+          <option name="sad">Sad</option>
+          <option name = "neutral"> Neutral </option>
+          <option name = "na"> Cant </option>
         </select>
+
+        <label>time</label>
+        <select value={this.state.time} onChange={this.handleTimeChange}>
+          <option name="five"> 5</option>
+          <option name="ten">10</option>
+          <option name = "fifteen"> 15 </option>
+          <option name = "twenty"> 20 </option>
+        </select>
+
+        <label>writing</label>
+        <select value={this.state.writing_style} onChange={this.handleWritingChange}>
+          <option name="free"> free</option>
+          <option name="question">question-based</option>
+        </select>
+
+        <Link onClick={console.log(this.state.mood)} to={routes.WriteEntry}> Submit </Link>
+
 
       </form>
     );
