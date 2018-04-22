@@ -7,97 +7,57 @@ import WriteEntry from '../WriteEntry';
 import { auth, db, form_resp } from '../../firebase';
 
 
-form_resp.createResponse('mariama', 50);
-
-const updateByPropertyName = (propertyName, value) => () => ({
-  [propertyName]: value,
-});
-
-const INITIAL_STATE = {
-  mood:'',
-  time: 0,
-  writing_style: ''
-
-};
-
+//form_resp.createResponse('bdslfkjsdlak;j', 50, "heyydflsa;k");
 
 
 class Questionnaire extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor () {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+      gender: ''
 
-    this.state = { ...INITIAL_STATE };
+    };
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  onSubmit = (event) => {
-    const {
-      username,
-      email,
-      passwordOne,
-    } = this.state;
-
-
-    //More
+  handleEmailChange (evt) {
+    this.setState({ email: evt.target.value });
+    console.log(evt.target.value)
   }
 
-  render() {
+  handlePasswordChange (evt) {
+    this.setState({ password: evt.target.value });
+  }
 
-    return(
-      <div>
-      <div>
-      <Navigation />
-        <div class="ui horizontal divider">Questionnaire</div>
-        <form class="ui form segment">
-        <div class="two fields">
+  handleChange(e) {
+    this.setState({ gender: e.target.value });
+    console.log(e.target.value)
+  }
 
-        <div class="field">
-          <label>How are you feeling today?</label>
-          <select class="ui dropdown" name="feeling">
-            <option value="Happy">Happy</option>
-            <option value="Sad">Sad</option>
-            <option value="Neutral"> Neutral </option>
-            <option value="na">{"Can't describe it"}</option>
-          </select>
-        </div>
-      </div>
-      <div class="two fields">
-        <div class="field">
-          <label>How long do you want to write?</label>
-           <select class="ui dropdown" name="time">
-            <option value="five"> 5 minutes</option>
-            <option value="ten"> 10 minutes</option>
-            <option value="fifteen"> 15 minutes </option>
-            <option value="twenty"> 20 minutes </option>
-            <option value="thirty">30 minutes </option>
-          </select>
-        </div>
+  render () {
+    return (
+      <form>
 
-      </div>
-      <div class="two fields">
-        <div class="field">
-        <label>Writing Style</label>
-        <select name="Free_Writing" multiple="" class="ui fluid dropdown"  >
-        <option value="Free_Writing">Free Write</option>
-        <option value="Question-based"> Question-Based</option>
+        <label>Email</label>
+        <input type="text" name="email" onChange={this.handleEmailChange} />
+
+        <label>Password</label>
+        <input type="password" name="password" onChange={this.handlePasswordChange} />
+
+        <label>carr :)</label>
+        <select value={this.state.gender} onChange={this.handleChange}>
+          <option name="male"> Male</option>
+          <option name="female">Female</option>
         </select>
-        </div>
-      </div>
-      <Button> <Link to={routes.WriteEntry}> Submit </Link></Button>
 
       </form>
-      </div>
-
-      </div>
     );
   }
-
-
-
-
 }
-
-
-
 
 export default Questionnaire;
