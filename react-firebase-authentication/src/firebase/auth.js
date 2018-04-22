@@ -1,4 +1,5 @@
 import { auth } from './firebase';
+import {firebase} from './firebase';
 
 // Sign Up
 export const doCreateUserWithEmailAndPassword = (email, password) =>
@@ -19,3 +20,8 @@ export const doPasswordReset = (email) =>
 // Password Change
 export const doPasswordUpdate = (password) =>
   auth.currentUser.updatePassword(password);
+
+
+auth.onAuthStateChanged(function(user) {
+    console.log(user.uid, "hello");// user is undefined if no user signed in
+  });
