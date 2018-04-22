@@ -29,7 +29,12 @@ if (!firebase.apps.length) {
 const db = firebase.database();
 const auth = firebase.auth();
 
-
+const myFunc = () =>{
+  auth.onAuthStateChanged(function(user) {
+      console.log(user.uid, "inside auth");// user is undefined if no user signed in
+      return user.uid;
+    });
+}
 
 const form_resp = firebase.database().ref('form_resp');
 
@@ -38,4 +43,5 @@ export {
   db,
   auth,
   form_resp,
+  myFunc,
 };

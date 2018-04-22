@@ -22,6 +22,9 @@ export const doPasswordUpdate = (password) =>
   auth.currentUser.updatePassword(password);
 
 
-auth.onAuthStateChanged(function(user) {
-    console.log(user.uid, "hello");// user is undefined if no user signed in
-  });
+
+
+// auth.onAuthStateChanged(function(user) {
+//     console.log(user.uid, "inside auth");// user is undefined if no user signed in
+//
+//   });

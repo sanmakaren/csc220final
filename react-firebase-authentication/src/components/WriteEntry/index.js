@@ -3,9 +3,7 @@ import './style.css';
 import Navigation from '../Navigation';
 import data from  '../../prompts.json';
 import { auth, db, form_resp} from '../../firebase';
-
-
-
+import * as firebase from 'firebase'
 
 
 const number = Math.floor(Math.random() *data.length)
@@ -39,6 +37,16 @@ class CountDownTimer extends React.Component {
   componentDidMount() {
     let timeLeftVar = this.secondsToTime(this.state.seconds);
     this.setState({ time: timeLeftVar });
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        console.log('user.getToken', user.uid); // undefined
+        
+
+
+      }
+    });
+
   }
 
   startTimer() {
@@ -111,6 +119,8 @@ class WriteEntry extends React.Component {
 
 
 
+
+
   render() {
     return (
 
@@ -135,8 +145,6 @@ class WriteEntry extends React.Component {
 
         </center>
       </form>
-
-
       </div>
 
     );
