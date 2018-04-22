@@ -18,7 +18,7 @@ class Questionnaire extends Component {
 
     this.state = {
       mood:'',
-      time: 0,
+      time: 199,
       writing_style: ''
      };
 
@@ -34,12 +34,12 @@ class Questionnaire extends Component {
   }
 
 
-  handleTimeChange (evt, data) {
+  handleTimeChange (evt) {
   this.setState({ time: evt.target.value });
   console.log(evt.target.value);
   }
 
-  handleWritingChange (evt, data) {
+  handleWritingChange (evt) {
   this.setState({ writing_style: evt.target.value });
   }
 
@@ -69,7 +69,7 @@ class Questionnaire extends Component {
           <option name="question">question-based</option>
         </select>
 
-        <Link onClick={console.log(this.state.mood)} to={routes.WriteEntry}> Submit </Link>
+        <button type="submit" onClick={() => { form_resp.createResponse(this.state.mood, this.state.time, this.state.writing_style); } }>Submit</button>
 
 
       </form>
