@@ -2,7 +2,12 @@ import React from 'react';
 import './style.css';
 import Navigation from '../Navigation';
 import data from  '../../prompts.json';
+import { auth, db, form_resp } from '../../firebase';
 
+
+
+
+const hel = form_resp.getResponse();
 
 const number = Math.floor(Math.random() *data.length)
 
@@ -100,6 +105,9 @@ class WriteEntry extends React.Component {
     alert('An essay was submitted: ' + this.state.value);
     event.preventDefault();
   }
+
+
+
 
 
   render() {

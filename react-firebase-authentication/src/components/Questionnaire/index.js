@@ -47,9 +47,12 @@ class Questionnaire extends Component {
     return (
       <div>
 
+      <Navigation/>
+      <div class="ui horizontal divider">Questionnaire</div>
+
 
       <form>
-      <label>sad car</label>
+      <label>mood</label>
       <select value={this.state.mood} onChange={this.handleMoodChange} >
         <option value="happy">Happy</option>
         <option value="sad">Sad</option>
@@ -78,7 +81,7 @@ class Questionnaire extends Component {
         </select>
         </form>
 
-        
+
         <Link onClick={() => { form_resp.createResponse(this.state.mood, this.state.time, this.state.writing_style)} } to={routes.WriteEntry}> Submit </Link>
         </div>
     );
