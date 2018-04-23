@@ -5,22 +5,26 @@ import data from  '../../prompts.json';
 import { auth, db, form_resp} from '../../firebase';
 import * as firebase from 'firebase';
 import ReactCountdownClock from 'react-countdown-clock';
+import { form, Button } from 'semantic-ui-react';
+
 
 
 class WriteEntry extends React.Component {
-
 
   constructor(props) {
     super(props);
     this.state = {
       value: '',
       seconds: 0,
+      mood: '',
+      writing_style: '',
+      select: 0,
+
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeSeconds = this.changeSeconds.bind(this);
-    this.componentDidMount = this.componentDidMount.bind(this);
+
   }
 
 
@@ -32,11 +36,6 @@ class WriteEntry extends React.Component {
     alert('An essay was submitted: ' + this.state.value);
     event.preventDefault();
   }
-
-  changeSeconds(firebaseSeconds){
-    this.setState({seconds: firebaseSeconds})
-  }
-
 
 
   componentDidMount() {
@@ -52,12 +51,33 @@ class WriteEntry extends React.Component {
             const key = Object.keys(snapshot.val());
 
             let fbasetime = 0;
+            let fbasemood = '';
+            let fbasestyle = '';
+
             for (let i = 0; i < key.length; i++) {
               if(snap[key[i]].userUID === user.uid){
                 fbasetime = snap[key[i]].time * 60;
+                fbasemood = snap[key[i]].mood;
+                fbasestyle = snap[key[i]].writing_style;
               }
             }
-            self.changeSeconds(fbasetime);
+
+            self.setState({mood: fbasemood});
+            self.setState({writing_style: fbasestyle});
+            self.setState({seconds: fbasetime});
+
+            if (fbasestyle === 'question-based'){
+            let question_number = [];
+              for (let i = 0; i < data.length; i++) {
+                if (data[i]["mood"] === fbasemood ) {
+                  question_number.push(i);
+
+                }
+              }
+              self.setState({select: question_number[Math.floor(Math.random() * question_number.length)]})
+            }
+
+
 
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
@@ -81,9 +101,11 @@ class WriteEntry extends React.Component {
 
         <Navigation />
 
+        <div class="ui horizontal divider">Writing Entry </div>
+
         <form onSubmit={this.handleSubmit}>
 
-          <h1> {data[10]["prompt"]}</h1>
+          <h1> {data[this.state.select]["prompt"]}</h1>
 
           <ReactCountdownClock seconds={this.state.seconds}
                          color="#abcdef"
