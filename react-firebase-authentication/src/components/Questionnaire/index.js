@@ -5,13 +5,14 @@ import Navigation from '../Navigation';
 import * as routes from '../../constants/routes';
 import WriteEntry from '../WriteEntry';
 import { auth, db, form_resp } from '../../firebase';
+import * as firebase from 'firebase'
 
 
-
-//form_resp.createResponse('bdslfkjsdlak;j', 50, "heyydflsa;k");
 
 
 class Questionnaire extends Component {
+
+
 
   constructor () {
     super();
@@ -20,12 +21,14 @@ class Questionnaire extends Component {
     this.state = {
       mood:'happy',
       time: 5,
-      writing_style: 'question-based'
+      writing_style: 'question-based',
+      userUID: ''
      };
 
     this.handleMoodChange = this.handleMoodChange.bind(this);
     this.handleTimeChange = this.handleTimeChange.bind(this);
-    this.handleWritingChange = this.handleWritingChange.bind(this)
+    this.handleWritingChange = this.handleWritingChange.bind(this);
+    //this.handleUserChange = this.handleUserChange.bind(this);
   }
 
   handleMoodChange (evt) {
@@ -40,6 +43,18 @@ class Questionnaire extends Component {
 
   handleWritingChange (evt) {
   this.setState({ writing_style: evt.target.value });
+  }
+
+
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        //console.log('other mount :)', user.uid); // undefined
+        this.setState({userUID: user.uid});
+        //console.log(this.state.userUID, 'help');
+      }
+    });
   }
 
 
@@ -82,7 +97,7 @@ class Questionnaire extends Component {
         </form>
 
 
-        <Link onClick={() => { form_resp.createResponse(this.state.mood, this.state.time, this.state.writing_style)} } to={routes.WriteEntry}> Submit </Link>
+        <Link onClick={() => { form_resp.createResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
         </div>
     );
   }

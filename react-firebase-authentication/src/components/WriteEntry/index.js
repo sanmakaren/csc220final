@@ -11,7 +11,7 @@ const number = Math.floor(Math.random() *data.length)
 class CountDownTimer extends React.Component {
   constructor() {
     super();
-    this.state = { time: {}, seconds: 61 };
+    this.state = { time: {}, seconds: 989 };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
@@ -36,17 +36,39 @@ class CountDownTimer extends React.Component {
 
   componentDidMount() {
     let timeLeftVar = this.secondsToTime(this.state.seconds);
-    this.setState({ time: timeLeftVar });
+    //this.setState({ time: timeLeftVar });
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if(user) {
-        console.log('user.getToken', user.uid); // undefined
-        
+    const ref = firebase.database().ref('/form_resp');
+      firebase.auth().onAuthStateChanged((user) => {
+        if(user) {
+          ref.on("value", function(snapshot) {
+            const snap = snapshot.val();
+            var key = Object.keys(snapshot.val());
+
+            for (let i = 0; i < key.length; i++) {
+              if(snap[key[i]].userUID == user.uid){
+                console.log(snap[key[i]].time * 60);
+
+                if (snap[key[i]].time != null){
+                  console.log('not null')
+                  this.state.seconds = snap[key[i]].time * 60;
+                  //console.log(this.secondsToTime(snap[key[i]].time * 60));
+                }
 
 
-      }
-    });
+                //this.setState({ time: snap[key[i]].time });
 
+              }
+            }
+
+          }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+          });
+
+        }
+      });
+
+      this.setState({ time: timeLeftVar });
   }
 
   startTimer() {
@@ -54,10 +76,6 @@ class CountDownTimer extends React.Component {
       this.timer = setInterval(this.countDown, 1000);
     }
   }
-
-
-
-
 
   countDown() {
     // Remove one second, set state so a re-render happens.
@@ -98,7 +116,7 @@ class WriteEntry extends React.Component {
     super(props);
     this.state = {
       value: '',
-      afAuth: ''
+      userUID: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -114,9 +132,29 @@ class WriteEntry extends React.Component {
     event.preventDefault();
   }
 
+  componentDidMount() {
 
+    const ref = firebase.database().ref('/form_resp');
+      firebase.auth().onAuthStateChanged((user) => {
+        if(user) {
+          ref.on("value", function(snapshot) {
+            const snap = snapshot.val();
+            var key = Object.keys(snapshot.val());
 
+            for (let i = 0; i < key.length; i++) {
+              if(snap[key[i]].userUID == user.uid){
+                console.log(snap[key[i]].mood, snap[key[i]].time, snap[key[i]].writing_style);
+              }
+            }
 
+          }, function (errorObject) {
+            console.log("The read failed: " + errorObject.code);
+          });
+
+        }
+      });
+
+  }
 
 
 
