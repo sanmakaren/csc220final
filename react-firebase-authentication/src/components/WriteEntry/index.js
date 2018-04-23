@@ -3,19 +3,24 @@ import './style.css';
 import Navigation from '../Navigation';
 import data from  '../../prompts.json';
 import { auth, db, form_resp} from '../../firebase';
-import * as firebase from 'firebase'
-
+import * as firebase from 'firebase';
+import ReactCountdownClock from 'react-countdown-clock';
 
 const number = Math.floor(Math.random() *data.length)
 
 class CountDownTimer extends React.Component {
   constructor() {
     super();
-    this.state = { time: {}, seconds: 989 };
+    this.state = {
+      time: {},
+     seconds: 989 };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
     this.countDown = this.countDown.bind(this);
+
   }
+
+
 
   secondsToTime(secs){
     let hours = Math.floor(secs / (60 * 60));
@@ -51,12 +56,13 @@ class CountDownTimer extends React.Component {
 
                 if (snap[key[i]].time != null){
                   console.log('not null')
-                  this.state.seconds = snap[key[i]].time * 60;
+                  //this.state.seconds = snap[key[i]].time * 60;
                   //console.log(this.secondsToTime(snap[key[i]].time * 60));
+                  //this.setState({time: this.secondsToTime(this.state.seconds)});
                 }
 
 
-                //this.setState({ time: snap[key[i]].time });
+
 
               }
             }
@@ -116,7 +122,8 @@ class WriteEntry extends React.Component {
     super(props);
     this.state = {
       value: '',
-      userUID: ''
+      userUID: '',
+      time: 60
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -144,6 +151,7 @@ class WriteEntry extends React.Component {
             for (let i = 0; i < key.length; i++) {
               if(snap[key[i]].userUID == user.uid){
                 console.log(snap[key[i]].mood, snap[key[i]].time, snap[key[i]].writing_style);
+                // this.state.time = snap[key[i]].time * 60;
               }
             }
 
@@ -169,8 +177,6 @@ class WriteEntry extends React.Component {
        <Welcome name = "sara" />
 
 
-       <CountDownTimer/>
-
       <form onSubmit={this.handleSubmit}>
 
       <h1> {data[number]["prompt"]}</h1>
@@ -183,6 +189,12 @@ class WriteEntry extends React.Component {
 
         </center>
       </form>
+
+      <ReactCountdownClock seconds={this.state.time}
+                     color="#000"
+                     alpha={0.9}
+                     size={100} />
+
       </div>
 
     );
