@@ -16,8 +16,6 @@ class HomePage extends Component {
 
         <button> <Link to= {routes.Questionnaire}>Form</Link> </button>
 
-        <button> <Link to= {routes.HomePageLayout}>Home</Link> </button>
-
       </div>
     );
   }

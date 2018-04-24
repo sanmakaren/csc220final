@@ -4,7 +4,7 @@
 .submission-form{
   max-width:500px;
   margin:2rem auto;
-  border:2px solid #E74C3C;
+  border:2px solid #0f0d0d;
   padding:2rem;
   border-radius:5px;
 
@@ -22,6 +22,13 @@
     font-size:18px;
     border-radius:5px;
   }
+
+}
+#left_but{
+  float:right;
+  padding: 0;
+  border: none;
+  background: none
 
 }
 

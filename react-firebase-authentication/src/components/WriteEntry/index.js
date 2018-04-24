@@ -2,10 +2,9 @@ import React from 'react';
 import './style.css';
 import Navigation from '../Navigation';
 import data from  '../../prompts.json';
-import { auth, db, form_resp} from '../../firebase';
 import * as firebase from 'firebase';
 import ReactCountdownClock from 'react-countdown-clock';
-import { form, Button } from 'semantic-ui-react';
+import { form} from 'semantic-ui-react';
 
 
 
@@ -101,28 +100,30 @@ class WriteEntry extends React.Component {
 
         <Navigation />
 
+
         <div class="ui horizontal divider">Writing Entry </div>
 
         <form onSubmit={this.handleSubmit}>
 
           <h1> {data[this.state.select]["prompt"]}</h1>
-
           <ReactCountdownClock seconds={this.state.seconds}
-                         color="#abcdef"
-                         alpha={0.9}
-                         size={100}/>
+                             color="#abcdef"
+                             alpha={0.9}
+                             size={90}/>
+<br/>
 
           <center>
 
-              <label> Essay:  </label>
+
 
               <textarea
-               rows="4"
-               cols="100"
+               rows="25"
+               cols="60"
                value={this.state.value}
                onChange={this.handleChange} />
 
-              <input type="submit" value="Submit" />
+
+              <center> <input type="submit" value="Submit" /> </center>
 
           </center>
         </form>

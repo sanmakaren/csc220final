@@ -4,19 +4,14 @@ import React, { Component } from 'react'
 import {
   Button,
   Container,
-  Divider,
-  Grid,
   Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
   Sidebar,
   Visibility
 } from 'semantic-ui-react'
-import * as routes from '../../constants/routes'
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -24,7 +19,7 @@ import * as routes from '../../constants/routes'
  */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
-    <center> <img src={require('./Logo.png')}/> </center>
+    <center> <img alt='' src={require('./Logo.png')}/> </center>
     <Header
       as='h2'
       content={""}

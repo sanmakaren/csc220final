@@ -1,10 +1,9 @@
 import React , {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { form, Button } from 'semantic-ui-react';
+import { form} from 'semantic-ui-react';
 import Navigation from '../Navigation';
 import * as routes from '../../constants/routes';
-import WriteEntry from '../WriteEntry';
-import { auth, db, form_resp } from '../../firebase';
+import { form_resp } from '../../firebase';
 import * as firebase from 'firebase'
 
 
@@ -67,7 +66,7 @@ class Questionnaire extends Component {
 
 
       <form>
-      <label>mood</label>
+      <label>Select Mood: </label>
       <select value={this.state.mood} onChange={this.handleMoodChange} >
         <option value="happy">Happy</option>
         <option value="sad">Sad</option>
@@ -78,7 +77,7 @@ class Questionnaire extends Component {
 
 
         <form>
-        <label>time</label>
+        <label>Select Time: </label>
         <select value={this.state.time} onChange={this.handleTimeChange}>
           <option value = {5} > 5 min </option>
           <option value = {10} >10 min</option>
@@ -88,14 +87,14 @@ class Questionnaire extends Component {
         </form>
 
         <form>
-        <label>writing</label>
+        <label>Select Writing Style: </label>
         <select value={this.state.writing_style} onChange={this.handleWritingChange}>
           <option value = "question-based">question based</option>
           <option value = "freewriting"> freewriting</option>
 
         </select>
         </form>
-
+        <br />
 
         <Link onClick={() => { form_resp.createResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
         </div>

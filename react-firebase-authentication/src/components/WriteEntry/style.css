@@ -21,11 +21,14 @@ body{
 }
 */
 
-
+textarea {
+border:solid 1px blue;
+}
 
 
 
 
 h1 {
     text-align: center;
+
 }

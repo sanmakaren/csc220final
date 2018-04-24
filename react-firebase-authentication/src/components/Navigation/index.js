@@ -21,14 +21,12 @@ const NavigationAuth = () =>
  <nav>
   <ul>
     <li><Link to={routes.HomePageLayout}> {name} </Link></li>
-    <li><Link to={routes.HOME}>Journal</Link></li>
+    <li><Link to={routes.Questionnaire}>Journal</Link></li>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>
-    <li><SignOutButton /></li>
+    <SignOutButton />
     {/* Render One page and not another*/}
   </ul>
   </nav>
-
-
 
   </div>
 

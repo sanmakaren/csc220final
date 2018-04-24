@@ -7,7 +7,7 @@ import {
 import 'semantic-ui-css/semantic.min.css';
 
 
-import Navigation from '../Navigation';
+//import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';

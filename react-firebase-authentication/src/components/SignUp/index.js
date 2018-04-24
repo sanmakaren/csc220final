@@ -3,7 +3,7 @@ import {
   Link,
   withRouter,
 } from 'react-router-dom';
-
+import Navigation from '../Navigation';
 import { auth, db } from '../../firebase';
 import * as routes from '../../constants/routes';
 
@@ -38,7 +38,7 @@ class SignUpForm extends Component {
       email,
       passwordOne,
     } = this.state;
-    
+
 
     const {
       history,
@@ -51,7 +51,7 @@ class SignUpForm extends Component {
         db.doCreateUser(authUser.uid, username, email)
           .then(() => {
             this.setState(() => ({ ...INITIAL_STATE }));
-            history.push(routes.HOME);
+            history.push(routes.Questionnaire);
           })
           .catch(error => {
             this.setState(updateByPropertyName('error', error));
@@ -81,6 +81,8 @@ class SignUpForm extends Component {
       email === '';
 
     return (
+      <div>
+      <Navigation />
       <form class="submission-form" onSubmit={this.onSubmit}>
       <label for="full-name">
       Full Name
@@ -118,12 +120,13 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit" id="sendBtn">
+        <button disabled={isInvalid} type="submit">
           Sign Up
         </button>
 
         { error && <p>{error.message}</p> }
       </form>
+      </div>
     );
   }
 }
