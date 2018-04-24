@@ -22,7 +22,7 @@
 
   {
     "mood" : "sad",
-    "prompt" : "What's your own definition of happiness"
+    "prompt" : "What's your definition of happiness?"
   },
 
   {
@@ -37,7 +37,7 @@
 
   {
     "mood" : "sad",
-    "prompt" : "Make a bucket list"
+    "prompt" : "Make a bucket list."
   },
 
 
@@ -61,7 +61,7 @@
   },
   {
     "mood" : "happy",
-    "prompt" : "Describe how you make important decisions"
+    "prompt" : "Describe how you make important decisions."
   },
   {
     "mood" : "happy",
