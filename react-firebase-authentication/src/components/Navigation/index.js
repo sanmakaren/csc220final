@@ -24,7 +24,8 @@ const NavigationAuth = () =>
     <li><Link to={routes.Questionnaire}>Journal</Link></li>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>
     <SignOutButton />
-    {/* Render One page and not another*/}
+
+    {/* Render One page and not another       */}
   </ul>
   </nav>
 

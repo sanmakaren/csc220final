@@ -9,9 +9,10 @@ export const doSignInWithEmailAndPassword = (email, password) =>
   auth.signInWithEmailAndPassword(email, password);
 
 // Sign out
-export const doSignOut = () =>
+export const doSignOut = () => {
   auth.signOut();
-
+  
+}
 // Password Reset
 export const doPasswordReset = (email) =>
   auth.sendPasswordResetEmail(email);

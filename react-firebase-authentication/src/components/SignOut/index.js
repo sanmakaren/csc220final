@@ -1,12 +1,16 @@
 import React from 'react';
 import { auth } from '../../firebase';
+import * as routes from '../../constants/routes';
+import { Link } from 'react-router-dom';
 
-const SignOutButton = () =>
-  <button id="left_but"
+
+const SignOutButton = ({ history }) =>
+ <button id="left_but"
     type="button"
     onClick={auth.doSignOut}
+
   >
-    Sign Out
+    <Link to={routes.HomePageLayout}> Sign out </Link>
   </button>
 
 
