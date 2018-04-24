@@ -1,0 +1,114 @@
+[
+
+  {
+  "mood" : "free",
+  "prompt" : "write whatever!"
+  },
+
+  {
+    "mood" : "sad",
+    "prompt" : "Write a letter to your eight year old self."
+  },
+  {
+
+    "mood" : "sad",
+    "prompt" : "Dear future self...?"
+  },
+
+  {
+    "mood" : "sad",
+    "prompt" : "What makes a person good?"
+  },
+
+  {
+    "mood" : "sad",
+    "prompt" : "What's your own definition of happiness?"
+  },
+
+  {
+    "mood" : "sad",
+    "prompt" : "What worries you? Is it your control?"
+  },
+
+  {
+    "mood" : "sad",
+    "prompt" : "Write letters to friends and family member about things you can't to them in person."
+  },
+
+  {
+    "mood" : "sad",
+    "prompt" : "Make a bucket list."
+  },
+
+
+  {
+    "mood" : "happy",
+    "prompt" : "Describe the time you laughed the hardest."
+  },
+
+  {
+    "mood" : "happy",
+    "prompt" : "What do you do to help people?"
+  },
+  {
+    "mood" : "happy",
+    "prompt" : "Describe what you are most proud of."
+  },
+
+  {
+    "mood" : "happy",
+    "prompt" : "What matters? What doesn't?"
+  },
+  {
+    "mood" : "happy",
+    "prompt" : "Describe how you make important decisions."
+  },
+  {
+    "mood" : "happy",
+    "prompt" : "How can you improve yourself?"
+  },
+
+  {
+    "mood" : "happy",
+    "prompt" : "Do you consider yourself trustworthy?"
+  },
+
+  {
+    "mood" : "neutral",
+    "prompt" : "Name an aspect of your life over which you wish you had more control."
+  },
+
+  {
+    "mood" : "neutral",
+    "prompt" : "Are you shy or outgoing? Why do you think that is?"
+  },
+
+
+  {
+    "mood" : "neutral",
+    "prompt" : "Describe some things you and a good friend have in commmon. Also describe some things that make you different."
+  },
+
+
+  {
+    "mood" : "neutral",
+    "prompt" : "What's a talent you wish you had? Why"
+  },
+
+
+  {
+    "mood" : "neutral",
+    "prompt" : "What advice would you give to older people so they can become young at heart."
+  },
+
+  {
+    "mood" : "neutral",
+    "prompt" : "Write about your job, pets, your home, etc."
+  },
+
+  {
+    "mood" : "neutral",
+    "prompt" : "Make up an alter ego for yourself. Give them a name and then describe their qualities."
+  }
+
+  ]
