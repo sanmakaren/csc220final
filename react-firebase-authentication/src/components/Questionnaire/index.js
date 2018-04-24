@@ -11,8 +11,6 @@ import * as firebase from 'firebase'
 
 class Questionnaire extends Component {
 
-
-
   constructor () {
     super();
 
@@ -66,8 +64,8 @@ class Questionnaire extends Component {
 
 
       <form>
-      <label>Select Mood: </label>
-      <select value={this.state.mood} onChange={this.handleMoodChange} >
+      <b> <label>MOOD </label> </b>
+      <select value={this.state.mood} onChange={this.handleMoodChange}  class="ui dropdown" id="select">
         <option value="happy">Happy</option>
         <option value="sad">Sad</option>
         <option value="neutral">Neutral</option>
@@ -77,8 +75,8 @@ class Questionnaire extends Component {
 
 
         <form>
-        <label>Select Time: </label>
-        <select value={this.state.time} onChange={this.handleTimeChange}>
+        <b> <label>TIME </label> </b>
+        <select value={this.state.time} onChange={this.handleTimeChange}  class="ui dropdown" id="select">
           <option value = {5} > 5 min </option>
           <option value = {10} >10 min</option>
           <option value = {15} > 15 min </option>
@@ -87,8 +85,8 @@ class Questionnaire extends Component {
         </form>
 
         <form>
-        <label>Select Writing Style: </label>
-        <select value={this.state.writing_style} onChange={this.handleWritingChange}>
+        <b> <label>WRITING STYLE </label> </b>
+        <select value={this.state.writing_style} onChange={this.handleWritingChange}   class="ui dropdown" id="select">
           <option value = "question-based">question based</option>
           <option value = "freewriting"> freewriting</option>
 
@@ -96,7 +94,7 @@ class Questionnaire extends Component {
         </form>
         <br />
 
-        <Link onClick={() => { form_resp.createResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
+        <Link class="ui primary basic button" onClick={() => { form_resp.createResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
         </div>
     );
   }

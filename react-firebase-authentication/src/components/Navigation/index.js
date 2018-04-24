@@ -25,7 +25,7 @@ const NavigationAuth = () =>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>
     <SignOutButton />
 
-    {/* Render One page and not another       */}
+    {/* Render One page and not another  */}
   </ul>
   </nav>
 
