@@ -81,10 +81,18 @@ cd Lets_Talk
 yarn start
 ```
 
+## Notes
+1. Still need to implement page that shows previous journal entries although if
+a journal is submitted it is saved in firebase
+2. react-firebase-authentication and kv24 are older versions of "Lets_Talk"
+3. In case Sign-Up doesn't work refresh or log into mj@letstalk.com, with the password 123456
+
+
 ## Built With
 
 1. React
 2. Firebase
+
 
 
 ## Authors
