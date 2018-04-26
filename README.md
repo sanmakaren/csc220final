@@ -12,7 +12,7 @@ Overview: Let's Talk is a journaling web application that provides users with pr
 
 3. Journal platforms do not encourage undistracted freewriting which means that users could be multitasking and not really engaged with their inner thoughts.
 
-### Goals of Project
+### Goals of Project:
 
 1. Create a journaling platform that provides personalized prompts that take into account how the user is has been or is currently feeling.This will be taken care of with a questionnaire before the user begins writing.
 Users will be able to specify how long they would like write to encourage them to write without distractions.
@@ -74,10 +74,10 @@ npm install react-countdown-clock
 -- In case there is an error, check if your machine is missing any dependencies.
 
 
-## How to run
+## How To Run
 
 ```{bash}
-cd into the project
+cd Lets_Talk
 yarn start
 ```
 
@@ -94,4 +94,3 @@ Mariama Jaiteh & Karen Santamaria
 ## Acknowledgments
 
 1. User Authentication portion of our application comes from: https://github.com/rwieruch/react-firebase-authentication
-
