@@ -1,0 +1,143 @@
+.app {
+  margin: 20px;
+}
+.submission-form{
+  max-width:500px;
+  margin:2rem auto;
+  border:2px solid #0f0d0d;
+  padding:2rem;
+  border-radius:5px;
+
+  label {
+    display:block;
+    padding:1rem 0 .25rem;
+    text-transform:uppercase;
+    font-size:14px;
+  }
+  input, textarea{
+    display:block;
+    width:10%;
+    border:2px solid #2980B9;
+    padding:.5rem;
+    font-size:18px;
+    border-radius:5px;
+  }
+
+}
+#left_but{
+  float:right;
+  padding: 0;
+  border: none;
+  background: none
+
+}
+
+#sendBtn{
+  border:0;
+  background:#343050;
+  padding:.5rem;
+  color:white;
+  margin:1rem 0;
+  width:auto;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.3s background ease;
+  &:hover{
+    background:#3498DB;
+  }
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.Navigation {
+    ul {
+        display: flex;
+        height: 37px;
+        align-items: center;
+        padding: 0 10px;
+
+        li {
+            font-weight: 400;
+            padding: 7px 10px;
+            font-size: 14px;
+            transition: background .125s ease;
+            border-radius: 3px;
+
+            &:hover {
+                background: $red;
+                cursor: pointer;
+            }
+        }
+    }
+}
+body {
+  background-color: white;
+}
+
+img {
+  position: fixed; /* or absolute */
+  top: 35%;
+  left: 30%;
+}
+
+Header {
+  background-color: blue;
+}
