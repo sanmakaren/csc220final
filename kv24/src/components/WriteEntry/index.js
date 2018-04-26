@@ -7,8 +7,7 @@ import ReactCountdownClock from 'react-countdown-clock';
 import { form} from 'semantic-ui-react';
 import { entry_resp } from '../../firebase';
 
-
-
+//User's Questionnaire responses create the entry page
 class WriteEntry extends React.Component {
 
   constructor(props) {
@@ -37,7 +36,7 @@ class WriteEntry extends React.Component {
   handleDate(){
 
       const date = new Date();
-
+      //Save the time the journal entry was written.
       const monthNames = [
           "January", "February", "March",
           "April", "May", "June", "July",
@@ -55,7 +54,7 @@ class WriteEntry extends React.Component {
 
   handleSubmit(event) {
 
-
+      // Save Entry in firebase
       const date = this.handleDate();
 
       const entry = "Your mood was: " + this.state.mood +  "\n" +
@@ -72,7 +71,7 @@ class WriteEntry extends React.Component {
 
   }
 
-
+  // Take response from Questionnaire and display
   componentDidMount() {
 
     const self = this;
@@ -113,8 +112,6 @@ class WriteEntry extends React.Component {
               self.setState({select: question_number[Math.floor(Math.random() * question_number.length)]})
             }
 
-
-
           }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
           });
@@ -140,7 +137,6 @@ class WriteEntry extends React.Component {
 
         <Navigation />
 
-
         <div class="ui horizontal divider">Writing Entry </div>
 
         <form onSubmit={this.handleSubmit}>
@@ -150,11 +146,8 @@ class WriteEntry extends React.Component {
                              color="#abcdef"
                              alpha={0.9}
                              size={90}/>
-<br/>
-
+          <br/>
           <center>
-
-
 
               <textarea
                rows="25"

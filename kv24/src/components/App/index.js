@@ -5,9 +5,6 @@ import {
 } from 'react-router-dom';
 
 import 'semantic-ui-css/semantic.min.css';
-
-
-//import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
 import SignInPage from '../SignIn';
@@ -22,6 +19,7 @@ import HomePageLayout from '../HomePageLayout';
 
 import './index.css';
 
+// Display the following routes on the page when clicked
 const App = () =>
   <Router>
     <div className="app">
@@ -34,10 +32,6 @@ const App = () =>
       <Route exact path={routes.Questionnaire} component={() => <Questionnaire /> } />
       <Route exact path={routes.HomePageLayout} component={() => <HomePageLayout />} />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
-
-
-
-
 
     </div>
   </Router>

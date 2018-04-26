@@ -55,7 +55,7 @@ class DesktopContainer extends Component {
     return (
       <Responsive {...Responsive.onlyComputer}>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign='center' style={{ minHeight: 700, padding: '1em 0em' }} vertical>
+          <Segment inverted textAlign='center' style={{ minHeight: 800, padding: '1em 0em' }} vertical>
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -103,10 +103,6 @@ class MobileContainer extends Component {
       <Responsive {...Responsive.onlyMobile}>
         <Sidebar.Pushable>
           <Sidebar as={Menu} animation='uncover' inverted vertical visible={sidebarOpened}>
-            <Menu.Item as='a' active>Home</Menu.Item>
-            <Menu.Item as='a'>Work</Menu.Item>
-            <Menu.Item as='a'>Company</Menu.Item>
-            <Menu.Item as='a'>Careers</Menu.Item>
             <Menu.Item as={Link} to='/signin'>Log in</Menu.Item>
             <Menu.Item as={Link} to='/signup'>Sign Up</Menu.Item>
           </Sidebar>

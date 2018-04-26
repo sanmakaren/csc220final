@@ -9,13 +9,9 @@ import * as firebase from 'firebase'
 
 class Questionnaire extends Component {
 
-
-
-
   constructor () {
     super();
-
-
+    //States to track Form answers
     this.state = {
       mood:'happy',
       time: 5,
@@ -31,9 +27,7 @@ class Questionnaire extends Component {
 
   handleMoodChange (evt) {
   this.setState({ mood: evt.target.value });
-
   }
-
 
   handleTimeChange (evt) {
   this.setState({ time: evt.target.value });
@@ -42,8 +36,6 @@ class Questionnaire extends Component {
   handleWritingChange (evt) {
   this.setState({ writing_style: evt.target.value });
   }
-
-
 
   componentDidMount() {
 
@@ -56,7 +48,6 @@ class Questionnaire extends Component {
     });
   }
 
-
   render () {
     return (
       <div>
@@ -66,19 +57,17 @@ class Questionnaire extends Component {
 
 
       <form>
-      <label>Select Mood: </label>
-      <select value={this.state.mood} onChange={this.handleMoodChange} >
+      <b><label> Select Mood: </label> </b>
+      <select value={this.state.mood} onChange={this.handleMoodChange} class="ui dropdown" id="select">
         <option value="happy">Happy</option>
         <option value="sad">Sad</option>
         <option value="neutral">Neutral</option>
       </select>
       </form>
 
-
-
-        <form>
-        <label>Select Time: </label>
-        <select value={this.state.time} onChange={this.handleTimeChange}>
+      <form>
+      <b>  <label> Select Time: </label> </b>
+        <select value={this.state.time} onChange={this.handleTimeChange} class="ui dropdown" id="select">
           <option value = {5} > 5 min </option>
           <option value = {10} >10 min</option>
           <option value = {15} > 15 min </option>
@@ -87,8 +76,8 @@ class Questionnaire extends Component {
         </form>
 
         <form>
-        <label>Select Writing Style: </label>
-        <select value={this.state.writing_style} onChange={this.handleWritingChange}>
+        <b> <label>Select Writing Style: </label> </b>
+        <select value={this.state.writing_style} onChange={this.handleWritingChange} class="ui dropdown" id="select">
           <option value = "question-based">question based</option>
           <option value = "freewriting"> freewriting</option>
 
@@ -96,7 +85,7 @@ class Questionnaire extends Component {
         </form>
         <br />
 
-        <Link onClick={() => { form_resp.entryResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
+        <Link class="ui primary basic button" onClick={() => { form_resp.entryResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
         </div>
     );
   }
