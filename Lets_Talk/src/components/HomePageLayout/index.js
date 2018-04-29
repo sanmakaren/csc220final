@@ -6,6 +6,8 @@ import {
   Container,
   Header,
   Icon,
+  Grid,
+  Image,
   Menu,
   Responsive,
   Segment,
@@ -55,7 +57,7 @@ class DesktopContainer extends Component {
     return (
       <Responsive {...Responsive.onlyComputer}>
         <Visibility once={false} onBottomPassed={this.showFixedMenu} onBottomPassedReverse={this.hideFixedMenu}>
-          <Segment inverted textAlign='center' style={{ minHeight: 800, padding: '1em 0em' }} vertical>
+          <Segment inverted textAlign='center' style={{ minHeight: 810, padding: '1em 0em' }} vertical>
             <Menu
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
@@ -148,6 +150,37 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
+  <Segment style={{ padding: '8em 0em' }} vertical>
+  <Grid container stackable verticalAlign='middle'>
+    <Grid.Row>
+      <Grid.Column width={8}>
+
+      <Header as='h3' style={{ fontSize: '2em' }}> {"Our Mission"}</Header>
+      <p style={{ fontSize: '1.33em' }}>
+        {"1. To get you used to writing down your thoughts."}
+      </p>
+      <p style={{ fontSize: '1.33em' }}>
+        {"These journal topics aren’t too serious/personal, so beginners won’t feel intimidated by them. You can use these non-invasive prompts to start working towards your journaling goals."}
+      </p>
+      <p style={{ fontSize: '1.33em' }}>
+        {"2. To introduce you to ‘stream-of-consciousness’ writing"}
+      </p>
+      <p style={{ fontSize: '1.33em' }}>
+        {".....which is writing down all your thoughts as they come to you, without stopping/editing. This technique allows you to deeply explore your own thoughts."}
+      </p>
+
+      </Grid.Column>
+      <Grid.Column floated='right' width={6}>
+        <Image
+          bordered
+          rounded
+          size='medium'
+        src={require('./Home.png')}        />
+      </Grid.Column>
+    </Grid.Row>
+
+  </Grid>
+</Segment>
 
   </ResponsiveContainer>
 )

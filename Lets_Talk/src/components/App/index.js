@@ -16,6 +16,7 @@ import * as routes from '../../constants/routes';
 import WriteEntry from '../WriteEntry';
 import Questionnaire from '../Questionnaire';
 import HomePageLayout from '../HomePageLayout';
+import PastEntries from '../PastEntries';
 
 import './index.css';
 
@@ -32,6 +33,7 @@ const App = () =>
       <Route exact path={routes.Questionnaire} component={() => <Questionnaire /> } />
       <Route exact path={routes.HomePageLayout} component={() => <HomePageLayout />} />
       <Route exact path={routes.ACCOUNT} component={() => <AccountPage />} />
+      <Route exact path={routes.PastEntries} component={() => <PastEntries />} />
 
     </div>
   </Router>

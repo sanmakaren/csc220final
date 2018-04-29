@@ -10,7 +10,7 @@ const SignOutButton = ({ history }) =>
     onClick={auth.doSignOut}
 
   >
-    <Link to={routes.HomePageLayout}> Sign out </Link>
+    <Link id="remove" to={routes.HomePageLayout}> Sign out </Link>
   </button>
 
 

@@ -28,7 +28,6 @@ class WriteEntry extends React.Component {
 
   }
 
-
   handleChange(event) {
     this.setState({value: event.target.value});
   }
@@ -137,7 +136,7 @@ class WriteEntry extends React.Component {
 
         <Navigation />
 
-        <div class="ui horizontal divider">Writing Entry </div>
+        <div className="ui horizontal divider">Writing Entry </div>
 
         <form onSubmit={this.handleSubmit}>
 
@@ -155,8 +154,7 @@ class WriteEntry extends React.Component {
                value={this.state.value}
                onChange={this.handleChange} />
 
-
-              <center> <input type="submit" value="Submit" /> </center>
+               <input type="submit" value="Submit" />
 
           </center>
         </form>

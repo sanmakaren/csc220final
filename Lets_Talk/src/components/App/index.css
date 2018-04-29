@@ -1,5 +1,6 @@
 .app {
-  margin: 20px;
+  margin: 0;
+  padding: 5px;
 }
 .submission-form{
   max-width:500px;
@@ -30,6 +31,10 @@
   border: none;
   background: none
 
+}
+
+#remove {
+  color:black;
 }
 
 #sendBtn{
@@ -133,7 +138,7 @@ body {
 }
 
 img {
-  position: fixed; /* or absolute */
+  position: absolute; /* or absolute */
   top: 35%;
   left: 30%;
 }

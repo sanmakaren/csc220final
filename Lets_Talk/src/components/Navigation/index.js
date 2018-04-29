@@ -20,6 +20,7 @@ const NavigationAuth = () =>
   <ul>
     <li><Link to={routes.HomePageLayout}> {name} </Link></li>
     <li><Link to={routes.Questionnaire}>Journal</Link></li>
+    <li><Link to={routes.PastEntries}>Past Entries</Link></li>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>
     <SignOutButton />
 

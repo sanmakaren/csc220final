@@ -53,12 +53,12 @@ class Questionnaire extends Component {
       <div>
 
       <Navigation/>
-      <div class="ui horizontal divider">Questionnaire</div>
+      <div className="ui horizontal divider">Questionnaire</div>
 
 
       <form>
       <b><label> Select Mood: </label> </b>
-      <select value={this.state.mood} onChange={this.handleMoodChange} class="ui dropdown" id="select">
+      <select value={this.state.mood} onChange={this.handleMoodChange} className="ui dropdown" id="select">
         <option value="happy">Happy</option>
         <option value="sad">Sad</option>
         <option value="neutral">Neutral</option>
@@ -67,7 +67,7 @@ class Questionnaire extends Component {
 
       <form>
       <b>  <label> Select Time: </label> </b>
-        <select value={this.state.time} onChange={this.handleTimeChange} class="ui dropdown" id="select">
+        <select value={this.state.time} onChange={this.handleTimeChange} className="ui dropdown" id="select">
           <option value = {5} > 5 min </option>
           <option value = {10} >10 min</option>
           <option value = {15} > 15 min </option>
@@ -77,7 +77,7 @@ class Questionnaire extends Component {
 
         <form>
         <b> <label>Select Writing Style: </label> </b>
-        <select value={this.state.writing_style} onChange={this.handleWritingChange} class="ui dropdown" id="select">
+        <select value={this.state.writing_style} onChange={this.handleWritingChange} className="ui dropdown" id="select">
           <option value = "question-based">question based</option>
           <option value = "freewriting"> freewriting</option>
 
@@ -85,7 +85,7 @@ class Questionnaire extends Component {
         </form>
         <br />
 
-        <Link class="ui primary basic button" onClick={() => { form_resp.entryResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
+        <Link className="ui primary basic button" onClick={() => { form_resp.entryResponse(this.state.mood, this.state.time, this.state.writing_style, this.state.userUID)} } to={routes.WriteEntry}> Submit </Link>
         </div>
     );
   }
