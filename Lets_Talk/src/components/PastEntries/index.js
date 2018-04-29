@@ -62,15 +62,17 @@ componentWillUnmount() {
     <p> {entry}</p>
   );
 
+  const noEntry = <i> <h3>No entries! <Link to={routes.Questionnaire}> Start writing today</Link> </h3> </i>
+
    return (
 
      <div>
      <Navigation />
      <div className="ui horizontal divider">Past Entries</div>
      <br/>
-     <center> <i> <h3>No entries! <Link to={routes.Questionnaire}> Start writing today</Link> </h3> </i>
-     {displayEntries}
-     </center>
+
+
+      <center> <b>{this.state.entries.length == 0 ? noEntry : displayEntries }</b> </center>
 
 
      </div>
