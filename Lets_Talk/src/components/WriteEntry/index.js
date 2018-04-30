@@ -4,8 +4,12 @@ import Navigation from '../Navigation';
 import data from  '../../prompts.json';
 import * as firebase from 'firebase';
 import ReactCountdownClock from 'react-countdown-clock';
-import { form} from 'semantic-ui-react';
+import { form, Button} from 'semantic-ui-react';
 import { entry_resp } from '../../firebase';
+import { Link } from 'react-router-dom';
+import * as routes from '../../constants/routes';
+
+
 
 //User's Questionnaire responses create the entry page
 class WriteEntry extends React.Component {
@@ -153,8 +157,13 @@ class WriteEntry extends React.Component {
                cols="60"
                value={this.state.value}
                onChange={this.handleChange} />
+                <Button floated="right" onClick={this.handleSubmit}  >
+                    <Link className="ui primary basic button" to={routes.PastEntries}> Submit </Link>
 
-               <input type="submit" value="Submit" />
+                  </Button>
+
+
+
 
           </center>
         </form>
