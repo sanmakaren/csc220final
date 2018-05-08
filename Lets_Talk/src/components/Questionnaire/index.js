@@ -6,7 +6,9 @@ import * as routes from '../../constants/routes';
 import { form_resp } from '../../firebase';
 import * as firebase from 'firebase'
 
-
+/**
+ * Questionnaire Component, contains form UI when users submit save the values.
+ */
 class Questionnaire extends Component {
 
   constructor () {
@@ -22,21 +24,21 @@ class Questionnaire extends Component {
     this.handleMoodChange = this.handleMoodChange.bind(this);
     this.handleTimeChange = this.handleTimeChange.bind(this);
     this.handleWritingChange = this.handleWritingChange.bind(this);
-    //this.handleUserChange = this.handleUserChange.bind(this);
   }
-
+  // Functions to save values from form.
   handleMoodChange (evt) {
   this.setState({ mood: evt.target.value });
   }
-
   handleTimeChange (evt) {
   this.setState({ time: evt.target.value });
   }
-
   handleWritingChange (evt) {
   this.setState({ writing_style: evt.target.value });
   }
-
+  /**
+   * When the page loads save the UserID of currentUSER
+   * Will be used later to save response for specific user.
+   */
   componentDidMount() {
 
     firebase.auth().onAuthStateChanged((user) => {
@@ -47,14 +49,15 @@ class Questionnaire extends Component {
       }
     });
   }
-
+  /**
+  * Form UI
+  */
   render () {
     return (
       <div>
 
       <Navigation/>
       <div className="ui horizontal divider">Questionnaire</div>
-
 
       <form>
       <b><label> Select Mood: </label> </b>

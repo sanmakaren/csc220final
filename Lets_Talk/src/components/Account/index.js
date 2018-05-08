@@ -5,6 +5,9 @@ import { PasswordForgetForm } from '../PasswordForget';
 import PasswordChangeForm from '../PasswordChange';
 import withAuthorization from '../Session/withAuthorization';
 
+/**
+ * Change password or Reset. 
+ */
 const AccountPage = () =>
   <AuthUserContext.Consumer>
     {authUser =>

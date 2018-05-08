@@ -5,6 +5,9 @@ import AuthUserContext from '../Session/AuthUserContext';
 import SignOutButton from '../SignOut';
 import * as routes from '../../constants/routes';
 
+/**
+ * Navigation Bar -- Check if User is signed in. If yes, display specific navbar options.
+ */
 const Navigation = () =>
   <AuthUserContext.Consumer>
     {authUser => authUser
@@ -13,6 +16,9 @@ const Navigation = () =>
     }
   </AuthUserContext.Consumer>
 
+  /**
+   * Navigation Bar -- USER is SIGNED IN
+   */
 const name = "Let's Talk"
 const NavigationAuth = () =>
 <div id="navigation" className="Navigation">
@@ -28,6 +34,10 @@ const NavigationAuth = () =>
   </nav>
 
   </div>
+
+  /**
+   * Navigation Bar -- USER is NOT SIGNED IN 
+   */
 
 const NavigationNonAuth = () =>
   <ul>

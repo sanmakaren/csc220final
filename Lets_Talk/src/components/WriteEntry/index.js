@@ -32,10 +32,13 @@ class WriteEntry extends React.Component {
 
   }
 
+
+   //Function to save journal entry
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
+  //Function to save journal entry with date
   handleDate(){
 
       const date = new Date();
@@ -55,6 +58,7 @@ class WriteEntry extends React.Component {
 
   }
 
+ // When user submits, save entry, with time, mood, and date written
   handleSubmit(event) {
 
       // Save Entry in firebase
@@ -65,7 +69,7 @@ class WriteEntry extends React.Component {
           "Today is: " + date + "\n" +
           "Your response: " + this.state.value;
 
-
+    // Push data onto database
     entry_resp.createResponse(entry, this.state.userID );
 
     this.setState({value: ''});
@@ -74,16 +78,16 @@ class WriteEntry extends React.Component {
 
   }
 
-  // Take response from Questionnaire and display
+  // Reference Database and Take response from Questionnaire and display onto screen
   componentDidMount() {
 
-    const self = this;
+    const self = this; // rename to avoid scoping issues
 
     const ref = firebase.database().ref('/form_resp');
       firebase.auth().onAuthStateChanged((user) => {
         if(user) {
           ref.on("value", function(snapshot) {
-
+            // Save JSON object in a variable
             const snap = snapshot.val();
             const key = Object.keys(snapshot.val());
 
@@ -103,7 +107,7 @@ class WriteEntry extends React.Component {
             self.setState({writing_style: fbasestyle});
             self.setState({seconds: fbasetime});
             self.setState({userID: user.uid });
-
+            // Choose question for users based on their response
             if (fbasestyle === 'question-based'){
             let question_number = [];
               for (let i = 0; i < data.length; i++) {
@@ -122,7 +126,7 @@ class WriteEntry extends React.Component {
         }
       });
     }
-
+    // Unreference the database.
     componentWillUnmount() {
       const refForm = firebase.database().ref('/form_resp');
       refForm.off();
@@ -131,19 +135,15 @@ class WriteEntry extends React.Component {
       refEntry.off();
     }
 
+// Render questions from Questionnaire on WriteEntry page.
 
   render() {
 
     return (
-
       <div>
-
         <Navigation />
-
         <div className="ui horizontal divider">Writing Entry </div>
-
         <form onSubmit={this.handleSubmit}>
-
           <h1> {data[this.state.select]["prompt"]}</h1>
           <ReactCountdownClock seconds={this.state.seconds}
                              color="#abcdef"
@@ -161,9 +161,6 @@ class WriteEntry extends React.Component {
                     <Link className="ui primary basic button" to={routes.PastEntries}> Submit </Link>
 
                   </Button>
-
-
-
 
           </center>
         </form>
